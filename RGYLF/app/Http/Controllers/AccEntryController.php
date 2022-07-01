@@ -148,7 +148,7 @@ class AccEntryController extends Controller
             }else{
                 $debit  += $request->amount[$key];
             }
-            $accEntryItem->save();
+            $loopAccEntryItem->save();
         }
         
 

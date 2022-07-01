@@ -1,4 +1,4 @@
-@extends('admin_layout.app', ['title' => 'Needy Person'])
+@extends('admin_layout.app', ['title' => 'Fund Recovery'])
 
 @section('content-header')
     <!-- Content Header (Page header) -->
@@ -6,11 +6,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">New Needy Person</h1>
+            <h1 class="m-0">New Fund Recovery</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item active">Needy Person</li>
+              <li class="breadcrumb-item active">Fund Recovery</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,107 +22,127 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-            <form method="POST" action="{{ route('needy_person.store') }}">
-                  @csrf
-                  <input type="hidden" name="fy_id" value="{{$fyear->id}}">
-                  <h4>Personal Details</h4>
-                  <div class="row">
-                    <div class="form-group col-md-4">
-                      <label>Name</label>
-                      <input type="text" class="form-control" name="name">
-                      <div style="color: red">{{ $errors->first('name') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Email</label>
-                      <input type="text" class="form-control" name="email">
-                      <div style="color: red">{{ $errors->first('email') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Contact Number</label>
-                      <input type="text" class="form-control" name="contact_no">
-                      <div style="color: red">{{ $errors->first('contact_no') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>What'a App Number</label>
-                      <input type="text" class="form-control" name="whatsapp_no">
-                      <div style="color: red">{{ $errors->first('whatsapp_no') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Verified By</label>
-                      <select name="verified_by" class="form-control">
-                        @foreach($users as $user)
-                          <option value="{{$user->id}}">{{$user->name}}</option>
-                        @endforeach
-                      </select>
-                      <div style="color: red">{{ $errors->first('name') }}</div>
-                    </div>
-                  </div>
-                  
-                  <h4>Account Details</h4>
-                  <div class="row">
-                    <div class="form-group col-md-4">
-                      <label>Account Groups</label>
-                      <select name="group_id" class="form-control">
-                        @foreach($accGroups as $accGroup)
-                          <option value="{{$accGroup->id}}">{{$accGroup->name}}</option>
-                        @endforeach
-                      </select>
-                      <div style="color: red">{{ $errors->first('name') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Account Code</label>
-                      <input type="text" class="form-control" name="acc_code">
-                      <div style="color: red">{{ $errors->first('acc_code') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Opening Balance</label>
-                      <input type="number" class="form-control" name="op_balance">
-                      <div style="color: red">{{ $errors->first('op_balance') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Opening Balance Credit/Debit</label>
-                      <select name="op_balance_dc" class="form-control">
-                        <option value="Credit">Credit</option>
-                        <option value="Debit">Debit</option>
-                      </select>
-                      <div style="color: red">{{ $errors->first('op_balance_dc') }}</div>
-                    </div>
-                    <div class="form-check col-md-4">
-                      <label class="form-check-label">
-                        <input type="radio" name="is_bank_cash" value="1" class="form-check-input" checked="" value="0">No
-                      </label><br>
-                      <label class="form-check-label">
-                        <input type="radio" name="is_bank_cash" value="1" class="form-check-input" value="1">Is Bank
-                      </label><br>
-                      <label class="form-check-label">
-                        <input type="radio" name="is_bank_cash" value="1" class="form-check-input" value="2">Is Cash
-                      </label>
-                      <div style="color: red">{{ $errors->first('active') }}</div>
-                    </div>
-                    <div class="form-group col-md-4">
-                      <label>Budget</label>
-                      <input type="number" class="form-control" name="budget">
-                      <div style="color: red">{{ $errors->first('budget') }}</div>
-                    </div>
+        <form method="POST" action="{{ route('fund_recovery.store') }}">
+            @csrf
+            <input type="hidden" name="entry_type" value="{{$accEntryType_id}}">
+            <input type="hidden" name="fy_id" value="{{$fyear->id}}">
+            <div class="row">
+              <div class="col-md-4 p-2">
+                <div class="card p-3">
+                  <table width="100%">
+                      <tbody>
+                          <tr>
+                              <td> Entry No :
+                                  <input type="text" name="number" class="form-control "  readonly="" value="">
+                              </td>
+                          </tr>
 
-                  </div>
+                          <tr class="alt">
+                              <td> Payment Head : <br>
+                                  <select name="pay_ledger_id"  class="form-control chzn chzn-done"
+                                      id="sel825">
+                                      <option value="">(Please Select)</option>
+                                      @foreach($accLedgers_from as $accLedger)
+                                      <option value="{{$accLedger->id}}">{{$accLedger->acc_code }}({{$accLedger->name}})</option>
+                                      @endforeach
+                                  </select>
+                              </td>
+                          </tr>
+
+                          <!-- <tr>
+                              <td> Project : <br>
+                                  <select name="project_id" id="project_id" onchange="getMeasurement(1)" required=""
+                                       class="form-control  chzn hidden chzn-done">
+                                      <option value="0">No. Project</option>
+                                  </select>
+                              </td>
+                          </tr> -->
 
 
+                          <tr class="alt" >
+                              <td> Sector : <br>
+                                  <select name="cost_center_id" required="" 
+                                      class="form-control chzn hidden chzn-done" id="sel1DM">
+                                      @foreach($accCostCenters as $key => $accCostCenter)
+                                      <option value="{{$accCostCenter->id}}" @if($key==0) selected @endif>{{$accCostCenter->name}}</option>
+                                      @endforeach
+                                  </select>
+                              </td>
+                          </tr>
 
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="checkbox" value="1" class="form-check-input" value="">Active
-                    </label>
-                    <div style="color: red">{{ $errors->first('active') }}</div>
-                  </div>
-                  <div class="form-group text-right">
-                      <input type="submit" class="btn btn-primary px-4" value="save" name="save"/>
-                  </div>
-              </form>
-            </div><!-- /.container-fluid -->
-        </div><!-- /.container-fluid -->
+                          <tr>
+                              <td> Entry Date :
+                                  <input type="date" name="date" class="form-control "  required="" min="2022-01-01" max="2022-12-31"
+                                      value="2022-06-10">
+                              </td>
+                          </tr>
+
+                          <tr class="alt">
+                              <td> Cheque No :
+                                  <input type="text" name="cheque_no" class="form-control "  value="">
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>              
+              </div>
+              <div class="col-md-8 p-2">
+                <div class="card p-3">
+                    <div id="tbl_ledg_wrapper">
+                      <div  id="tbl_ledg">
+                        <table width="100%">
+                          <tbody>
+                            <tr style="height:20px">
+                                <th> Needy Person </th>
+                                <th> Amount </th>
+                                <th> </th>
+                            </tr>
+                            <tr class="alt">
+                                <input type="hidden" name="entry_items_id[]" value="">
+                                <td>
+                                    <select name="ledger_id[]" id="ledger_id_1"  class="form-control  chzn hidden chzn-done">
+                                        <option value="">(Please Select)</option>
+                                        @foreach($needyPersons as $needyPerson)
+                                          <option value="{{$needyPerson->ledger->id}}">{{$needyPerson->ledger->acc_code }}({{$needyPerson->ledger->name}})</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td> <input type="number" class="form-control " min="0.01" step="0.01" name="amount[]"> </td>
+                                <td> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="text-right py-2">
+                      <a class="btn btn-primary" onclick="add_tbl_ledg()"><i class="fa fa-plus"></i></a>
+                    </div>
+
+                    <script>
+                      function add_tbl_ledg(){
+                        var p=$("#tbl_ledg").html();
+                        $("#tbl_ledg_wrapper").append(p);
+                      }
+                    </script>
+                    <table width="100%">
+                      <tbody>
+                          <tr>
+                              <td> Narration :
+                                  <textarea name="narration" class="form-control " style="width:100%; height:60px"></textarea>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+                </div>              
+              </div>
+            </div>
+
+            <div class="form-group text-right ">
+                <input type="submit" class="btn btn-primary px-3" value="save" name="save"/>
+            </div>
+        </form>
+
+
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

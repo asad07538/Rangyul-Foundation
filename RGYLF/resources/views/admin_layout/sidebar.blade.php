@@ -47,7 +47,7 @@
               </p>
             </a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
@@ -81,7 +81,7 @@
                 </a>
               </li>
             </ul>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -91,7 +91,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a href="{{ route('account_bank_payment.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bank Payment</p>
@@ -102,17 +102,17 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bank Receipt</p>
                 </a>
-              </li> -->
+              </li>
               <li class="nav-item">
                 <a href="{{ route('account_cash_payment.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Payment</p>
+                  <p>Cash Payment</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('account_cash_receipt.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Receipt</p>
+                  <p>Cash Receipt</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -121,12 +121,12 @@
                   <p>Journal Entry</p>
                 </a>
               </li>
-              <!-- <li class="nav-item">
+              <li class="nav-item">
                 <a href="{{ route('account_bank_transfer.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bank Transfer</p>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -144,12 +144,12 @@
                   <p>Financial Years</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="{{ route('account_costcenter.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sector</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="{{ route('account_group.index') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>

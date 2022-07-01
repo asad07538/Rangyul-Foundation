@@ -9,4 +9,9 @@ class Donar extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function ledger(){
+        return $this->belongsTo(AccLedger::class,'acc_ledger_id','id');
+    }
+
 }

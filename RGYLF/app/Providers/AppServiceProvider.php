@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // try {
+        try {
             //code...
             $fyear = AccFinalYear::where('active',1)->first();
             // dd($fyear);
@@ -34,8 +34,8 @@ class AppServiceProvider extends ServiceProvider
                 return redirect('account_financialyear\index');
             }
             View::share('fyear',$fyear);
-        // } catch (\Throwable $th) {
-        //     //throw $th;
-        // }
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 }

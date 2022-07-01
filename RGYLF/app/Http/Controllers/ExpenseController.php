@@ -16,7 +16,7 @@ class ExpenseController extends Controller
     public function index()
     {
         //
-        $expenses=AccEntry::all();
+        $expenses=AccEntry::where('custom_type','expense')->get();
         return view('fund.expense.index',compact('expenses'));
     }
 
@@ -27,8 +27,13 @@ class ExpenseController extends Controller
      */
     public function create()
     {
-        //
-        return view('fund.expense.create',compact('accGroups'));
+        $accCostCenters=AccCostCenter::all();
+        $accEntryTypes=AccEntryType::all();
+        $accLedgers_from=AccLedger::where('is_bank_cash','!=','0')->get();
+        $accLedgers_to=AccLedger::where('group_id','4');
+        $donars=Donar::all();
+        $accEntryType_id=4;
+        return view('fund.expense.create',compact('accEntries','accLedgers_from','accLedgers_to','accEntryTypes','accCostCenters','accEntryType_id','donars'));
     }
 
     /**

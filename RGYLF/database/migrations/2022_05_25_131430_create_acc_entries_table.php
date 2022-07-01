@@ -44,6 +44,7 @@ return new class extends Migration
             // $table->integer("approved_by");
             // $table->integer("approval_description");
             // $table->date("approval_date");
+            $table->string("custom_type")->nullable();
             $table->string("status");
             $table->timestamps();
         });

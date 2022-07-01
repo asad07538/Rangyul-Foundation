@@ -91,7 +91,7 @@ class FundRecoveryController extends Controller
                 $loopAccEntryItem->dc ="C";
                 $credit += $request->amount[$key];
 
-            $accEntryItem->save();
+            $loopAccEntryItem->save();
         }
         
 

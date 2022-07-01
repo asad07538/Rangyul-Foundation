@@ -88,7 +88,7 @@ class FundCollectionController extends Controller
 
         $debit  = 0;                
         $credit = 0;
-
+        // dd($request);
         foreach ($request->ledger_id as $key => $ledger_id) {   
             $loopAccEntryItem=new AccEntryItem;
             $loopAccEntryItem->entry_id =$accEntry->id;
@@ -98,7 +98,7 @@ class FundCollectionController extends Controller
                 $loopAccEntryItem->dc ="C";
                 $credit += $request->amount[$key];
 
-            $accEntryItem->save();
+            $loopAccEntryItem->save();
         }
         
 

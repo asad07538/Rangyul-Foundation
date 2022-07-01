@@ -73,16 +73,12 @@ class DonarController extends Controller
                 
                 'email'        =>      'required',
                 'contact_no'        =>      'required',
-                'whatsapp_no'        =>      'required',
 
 
                 'group_id'        =>      'required',
                 'acc_code'        =>      'required',
                 'op_balance'        =>      'required',
                 'op_balance_dc'        =>      'required',
-                'is_bank_cash'        =>      'required',
-                'budget'        =>      'required',
-                'fy_id'        =>      'required',
             ]
         );
         $ledger=AccLedger::create($data);

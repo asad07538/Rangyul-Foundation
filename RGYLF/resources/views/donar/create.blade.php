@@ -33,22 +33,22 @@
                   <hr>
                   <div class="row">
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Name</label>
+                      <label>Name *</label>
                       <input type="text" class="form-control" name="name">
                       <div style="color: red">{{ $errors->first('name') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Father Name</label>
+                      <label>Father Name *</label>
                       <input type="text" class="form-control" name="father_name">
                       <div style="color: red">{{ $errors->first('father_name') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>CNIC</label>
+                      <label>CNIC *</label>
                       <input type="text" class="form-control" name="cnic">
                       <div style="color: red">{{ $errors->first('cnic') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Date of Birth</label>
+                      <label>Date of Birth *</label>
                       <input type="date" class="form-control" name="dob">
                       <div style="color: red">{{ $errors->first('dob') }}</div>
                     </div>
@@ -58,7 +58,7 @@
                       <div style="color: red">{{ $errors->first('email') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Contact Number</label>
+                      <label>Contact Number *</label>
                       <input type="text" class="form-control" name="contact_no">
                       <div style="color: red">{{ $errors->first('contact_no') }}</div>
                     </div>
@@ -68,7 +68,7 @@
                       <div style="color: red">{{ $errors->first('whatsapp_no') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Marital Status</label>
+                      <label>Marital Status *</label>
                       <div class="form-check">
                           <label class="form-check-label">
                             <input type="radio" class="form-check-input" value="Married" name="marital_status"> Married
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Gender</label>
+                      <label>Gender *</label>
                       <div class="form-check">
                           <label class="form-check-label">
                             <input type="radio" class="form-check-input" value="Male" name="gender"> Male
@@ -116,22 +116,22 @@
                 <hr>
                   <div class="row">
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Country</label>
+                      <label>Country *</label>
                       <input type="text" class="form-control" name="country">
                       <div style="color: red">{{ $errors->first('country') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>District</label>
+                      <label>District *</label>
                       <input type="text" class="form-control" name="district">
                       <div style="color: red">{{ $errors->first('district') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Tehsil</label>
+                      <label>Tehsil *</label>
                       <input type="text" class="form-control" name="tehsil">
                       <div style="color: red">{{ $errors->first('tehsil') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Address</label>
+                      <label>Address *</label>
                       <input type="text" class="form-control" name="address">
                       <div style="color: red">{{ $errors->first('address') }}</div>
                     </div>
@@ -142,32 +142,32 @@
                   <hr>
                   <div class="row">
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account Name</label>
+                      <label>Account Name *</label>
                       <input type="text" class="form-control" name="account_name">
                       <div style="color: red">{{ $errors->first('account_name') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account CNIC</label>
+                      <label>Account CNIC *</label>
                       <input type="text" class="form-control" name="account_cnic">
                       <div style="color: red">{{ $errors->first('account_cnic') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account CRM No</label>
+                      <label>Account CRM No *</label>
                       <input type="text" class="form-control" name="account_crm_no">
                       <div style="color: red">{{ $errors->first('account_crm_no') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account Title</label>
+                      <label>Account Title *</label>
                       <input type="text" class="form-control" name="account_title">
                       <div style="color: red">{{ $errors->first('account_title') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account No</label>
+                      <label>Account No *</label>
                       <input type="text" class="form-control" name="account_no">
                       <div style="color: red">{{ $errors->first('account_no') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account Type</label>
+                      <label>Account Type *</label>
                       <input type="text" class="form-control" name="account_type">
                       <div style="color: red">{{ $errors->first('account_type') }}</div>
                     </div>
@@ -178,17 +178,17 @@
                   <hr>
                   <div class="row">
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Account Code</label>
+                      <label>Account Code *</label>
                       <input type="text" class="form-control" name="acc_code">
                       <div style="color: red">{{ $errors->first('acc_code') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Opening Balance</label>
+                      <label>Opening Balance *</label>
                       <input type="number" class="form-control" name="op_balance">
                       <div style="color: red">{{ $errors->first('op_balance') }}</div>
                     </div>
                     <div class="form-group col-md-4 col-lg-3">
-                      <label>Opening Balance Credit/Debit</label>
+                      <label>Opening Balance Credit/Debit *</label>
                       <select name="op_balance_dc" class="form-control">
                         <option value="Credit">Credit</option>
                         <option value="Debit">Debit</option>

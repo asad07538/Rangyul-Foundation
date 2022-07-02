@@ -9,4 +9,8 @@ class Sector extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function entries(){
+        return $this->hasMany(AccCostCenter::class,'cost_center_id','id');
+    }
 }

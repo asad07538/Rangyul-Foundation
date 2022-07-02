@@ -32,3 +32,9 @@
 <script src="{{ asset('admin_lte/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admin_lte/dist/js/pages/dashboard.js') }}"></script>
+
+
+  <!-- chartjs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <!-- <script type="text/javascript" src="jscript/graph.js"></script> -->
+  <script src="//code.jquery.com/jquery.js"></script>

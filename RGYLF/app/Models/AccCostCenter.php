@@ -10,7 +10,8 @@ class AccCostCenter extends Model
     use HasFactory;
     
     protected $guarded = ['id'];
+
     public function entries(){
-        return $this->hasMany(AccEntry::class,'cost_center_id ','id');
+        return $this->hasMany(AccEntry::class,'cost_center_id','id');
     }
 }

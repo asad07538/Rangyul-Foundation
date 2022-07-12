@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AccEntryTypeSeeder::class);
         $this->call(AccGroupSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(PermissionSeeder::class);
         
     }
 }

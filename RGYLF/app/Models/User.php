@@ -58,5 +58,12 @@ class User extends Authenticatable
     public function entries(){
         return $this->hasMany(AccEntry::class,'user_id','id');
     }
+    
+    public function permissions(){
+        return $this->belongsToMany(Permission::class,'user_permissions','user_id','permission_id');
+    }
+    public function groups(){
+        return $this->belongsToMany(Group::class,'user_groups','user_id','group_id');
+    }
 
 }

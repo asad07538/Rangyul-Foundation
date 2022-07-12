@@ -28,6 +28,10 @@ use App\Http\Controllers\FundRecoveryController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\PermissionController;
+
 /*
 
 |--------------------------------------------------------------------------
@@ -99,4 +103,7 @@ Route::middleware([
 
 
 
+    Route::resource('user',UserController::class);
+    Route::resource('role',GroupController::class);
+    Route::resource('permission',PermissionController::class);
 });
